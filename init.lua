@@ -81,7 +81,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-
+        
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim',       opts = {} },
@@ -90,6 +90,12 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
+    
+  require("mason-lspconfig").setup {
+    ensure_installed = { "lua_ls", 
+        "rust_analyzer",
+        "pyright" },
+  }
 
   {
     -- Autocompletion
@@ -419,8 +425,8 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
+  pyright = {},
+  rust_analyzer = {},
   -- tsserver = {},
 
   lua_ls = {
