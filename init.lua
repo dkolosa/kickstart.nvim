@@ -90,13 +90,7 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-    
-  require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", 
-        "rust_analyzer",
-        "pyright" },
-  }
-
+   
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -127,10 +121,10 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'folke/tokyonight.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
